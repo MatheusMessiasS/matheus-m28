@@ -1,0 +1,42 @@
+@mixin theme($theme: $color-01, $bg: $color-04) {
+    background-color:  $theme;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba($color-default, .25);
+}
+
+.cars {
+
+    &__title {
+        color: rgb(255, 140, 0);
+        box-shadow: 3px 0px 0px -1px rgb(255, 140, 0);
+    }
+    
+    &__item {
+        @include theme($theme: #ccc, $bg: #fff);
+        color: rgb(255, 140, 0);
+        display: flex;
+        float: left;
+        height: max-content;
+        justify-content: center;
+        align-items: baseline;
+        flex-flow: column;
+        &:hover{
+            box-shadow: 1px 1px 0px 5px rgb(255, 140, 0);
+            transition: 0.3s;
+        }
+
+        &--destack {
+            @include theme;
+        }
+
+    }
+
+    &__button {
+        background-color: rgb(255, 140, 0);
+        &:hover {
+            box-shadow: 1px 1px 0px 3px rgb(255, 140, 0);
+            transition: 0.3s;
+        }
+        
+    }
+}
